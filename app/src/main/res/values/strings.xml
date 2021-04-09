@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Bloom</string>
+    <string name="leaf_image">Leaf Image</string>
+    <string name="app_logo">App Logo</string>
+    <string name="app_description">Beautiful home garden solutions</string>
+    <string name="create_account">Create Account</string>
+    <string name="login">Log in</string>
+</resources>
