@@ -22,11 +22,11 @@ fun WelcomeScreen() {
 
 @Composable
 private fun WelcomeScreenContent() {
-    val isLight = MaterialTheme.colors.isLight
 
     Surface(color = MaterialTheme.colors.primary, modifier = Modifier.fillMaxSize()) {
+        val isLight = MaterialTheme.colors.isLight
 
-        WelcomeScreenBackground(isLight = isLight)
+        WelcomeScreenBackground(isLight)
 
         Column(
             horizontalAlignment = Alignment.CenterHorizontally,
@@ -35,11 +35,11 @@ private fun WelcomeScreenContent() {
 
             Spacer(modifier = Modifier.padding(72.dp))
 
-            LeafImage(isLight = isLight)
+            LeafImage(isLight)
 
             Spacer(modifier = Modifier.padding(48.dp))
 
-            LogoImage(isLight = isLight)
+            LogoImage(isLight)
 
             AppDescription()
 
@@ -47,7 +47,7 @@ private fun WelcomeScreenContent() {
 
             Spacer(modifier = Modifier.padding(8.dp))
 
-            LoginButton(isLight = isLight)
+            LoginButton(isLight)
 
         }
 
@@ -142,7 +142,6 @@ private fun LoginButton(isLight: Boolean) {
         )
     }
 }
-
 
 @Preview
 @Composable
