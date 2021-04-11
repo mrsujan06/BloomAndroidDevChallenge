@@ -19,16 +19,19 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavController
+import androidx.navigation.compose.navigate
+import androidx.navigation.compose.rememberNavController
 import com.example.bloom.R
 
 
 @Composable
-fun LoginScreen() {
-    LoginScreenContent()
+fun LoginScreen(navController: NavController) {
+    LoginScreenContent(navController)
 }
 
 @Composable
-fun LoginScreenContent() {
+fun LoginScreenContent(navController: NavController) {
 
     Surface(color = MaterialTheme.colors.background, modifier = Modifier.fillMaxSize()) {
         Column(
@@ -48,7 +51,8 @@ fun LoginScreenContent() {
             PasswordOutlineTextField(password = password, onPasswordChange = { password = it })
 
             LoginDescription()
-            LogInButton()
+
+            LogInButton(navController)
         }
     }
 }
@@ -167,13 +171,13 @@ fun LoginDescription() {
 }
 
 @Composable
-private fun LogInButton() {
+private fun LogInButton(navController: NavController) {
     Button(
         shape = MaterialTheme.shapes.medium,
         colors = ButtonDefaults.textButtonColors(
             backgroundColor = MaterialTheme.colors.secondary
         ),
-        onClick = { /*TODO*/ },
+        onClick = { navController.navigate("HomeScreen") },
         modifier = Modifier
             .fillMaxWidth()
             .height(48.dp)
@@ -189,7 +193,7 @@ private fun LogInButton() {
 @Composable
 fun PreviewLoginScreenDark() {
     BloomTheme(darkTheme = true) {
-        LoginScreen()
+        LoginScreen(rememberNavController())
     }
 
 }
@@ -198,7 +202,7 @@ fun PreviewLoginScreenDark() {
 @Composable
 fun PreviewLoginScreenLight() {
     BloomTheme(darkTheme = false) {
-        LoginScreen()
+        LoginScreen(rememberNavController())
     }
 
 }

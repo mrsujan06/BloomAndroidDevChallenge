@@ -24,7 +24,10 @@ class MainActivity : ComponentActivity() {
                         WelcomeScreen(navController)
                     }
                     composable("LoginScreen") {
-                        LoginScreen()
+                        LoginScreen(navController)
+                    }
+                    composable("HomeScreen"){
+                        HomeScreen()
                     }
 
                 }

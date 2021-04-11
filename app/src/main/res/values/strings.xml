@@ -9,4 +9,6 @@
     <string name="email_address">Email address</string>
     <string name="password">Password(8+ characters)</string>
     <string name="terms_description">By clicking, you agree to our Terms of use and consent to our Privacy Policy.</string>
+    <string name="search_label">Search</string>
+    <string name="design_your_home_garden">Design your home garden</string>
 </resources>
