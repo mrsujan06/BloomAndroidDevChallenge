@@ -11,17 +11,20 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavController
+import androidx.navigation.compose.navigate
+import androidx.navigation.compose.rememberNavController
 import com.example.bloom.ui.theme.BloomTheme
 import com.example.bloom.ui.theme.Pink900
 import com.example.bloom.ui.theme.White
 
 @Composable
-fun WelcomeScreen() {
-    WelcomeScreenContent()
+fun WelcomeScreen(navController: NavController) {
+    WelcomeScreenContent(navController)
 }
 
 @Composable
-private fun WelcomeScreenContent() {
+private fun WelcomeScreenContent(navController: NavController) {
 
     Surface(color = MaterialTheme.colors.primary, modifier = Modifier.fillMaxSize()) {
         val isLight = MaterialTheme.colors.isLight
@@ -43,7 +46,7 @@ private fun WelcomeScreenContent() {
 
             AppDescription()
 
-            CreateAccountButton()
+            CreateAccountButton(navController)
 
             Spacer(modifier = Modifier.padding(8.dp))
 
@@ -111,11 +114,11 @@ private fun AppDescription() {
 }
 
 @Composable
-private fun CreateAccountButton() {
+private fun CreateAccountButton(navController: NavController) {
     Button(
         shape = MaterialTheme.shapes.medium,
         colors = ButtonDefaults.buttonColors(MaterialTheme.colors.secondary),
-        onClick = {/*TODO*/ },
+        onClick = { navController.navigate("LoginScreen") },
         modifier = Modifier
             .fillMaxWidth()
             .height(48.dp)
@@ -147,7 +150,7 @@ private fun LoginButton(isLight: Boolean) {
 @Composable
 fun PreviewWelcomeDarkScreen() {
     BloomTheme(darkTheme = true) {
-        WelcomeScreen()
+        WelcomeScreen(rememberNavController())
     }
 }
 
@@ -155,7 +158,7 @@ fun PreviewWelcomeDarkScreen() {
 @Composable
 fun PreviewWelcomeLightScreen() {
     BloomTheme(darkTheme = false) {
-        WelcomeScreen()
+        WelcomeScreen(rememberNavController())
     }
 }
 

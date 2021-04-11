@@ -8,6 +8,7 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalUriHandler
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.AnnotatedString
 import androidx.compose.ui.text.SpanStyle
 import androidx.compose.ui.text.TextStyle
@@ -18,6 +19,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.example.bloom.R
 
 
 @Composable
@@ -30,6 +32,7 @@ fun LoginScreenContent() {
 
     Surface(color = MaterialTheme.colors.background, modifier = Modifier.fillMaxSize()) {
         Column(
+            verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.CenterHorizontally,
             modifier = Modifier
                 .fillMaxWidth()
@@ -54,10 +57,9 @@ fun LoginScreenContent() {
 @Composable
 private fun LoginHeader() {
     Text(
-        text = "Log in with email",
+        text = stringResource(R.string.login_header),
         style = MaterialTheme.typography.h1,
         modifier = Modifier
-            .paddingFromBaseline(184.dp)
             .padding(bottom = 16.dp)
     )
 }
@@ -75,7 +77,7 @@ private fun EmailIOutlineTextField(email: String, onEmailChange: (String) -> Uni
         ),
         label = {
             Text(
-                text = "Email address",
+                text = stringResource(R.string.email_address),
                 style = MaterialTheme.typography.body1,
                 color = MaterialTheme.colors.onPrimary
             )
@@ -101,7 +103,7 @@ private fun PasswordOutlineTextField(password: String, onPasswordChange: (String
         ),
         label = {
             Text(
-                text = "Password(8+ characters)",
+                text = stringResource(R.string.password),
                 style = MaterialTheme.typography.body1,
                 color = MaterialTheme.colors.onPrimary
             )
@@ -118,8 +120,7 @@ private fun PasswordOutlineTextField(password: String, onPasswordChange: (String
 fun LoginDescription() {
 
     val annotatedLinkString: AnnotatedString = buildAnnotatedString {
-        val description =
-            "By clicking, you agree to our Terms of use and consent to our Privacy Policy."
+        val description = stringResource(R.string.terms_description)
         val startIndex = description.indexOf("Terms of use")
         val endIndex = startIndex.plus(12)
 
