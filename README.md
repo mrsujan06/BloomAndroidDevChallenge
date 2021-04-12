@@ -2,6 +2,8 @@
 
 Completed Android Dev Challenge week 3 in Jetpack compose
 
+Light and Dark Theme ScreenShots
+
 ![WelcomeScreenLight](https://user-images.githubusercontent.com/36424417/114439506-f5839700-9bc0-11eb-9845-f254081eedc3.jpg)
 
 ![WelcomeScreenDark](https://user-images.githubusercontent.com/36424417/114439514-f74d5a80-9bc0-11eb-96fe-deab8d3b1182.jpg)
