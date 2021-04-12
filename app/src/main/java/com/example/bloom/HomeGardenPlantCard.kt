@@ -42,7 +42,7 @@ private fun HomeGardenPlantImage(plant: Plant) {
         contentDescription = plant.name.plus("Image"),
         contentScale = ContentScale.Crop,
         modifier = Modifier
-            .size(100.dp)
+            .size(64.dp)
             .clip(MaterialTheme.shapes.small)
     )
 }
@@ -63,8 +63,6 @@ private fun RowScope.TitleAndDescription(plant: Plant) {
             style = MaterialTheme.typography.body1,
             modifier = Modifier.paddingFromBaseline(bottom = 24.dp)
         )
-
-        Spacer(modifier = Modifier.padding(16.dp))
     }
 }
 
