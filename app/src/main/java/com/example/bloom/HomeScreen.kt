@@ -20,13 +20,13 @@ import com.example.bloom.ui.theme.BloomTheme
 @Composable
 fun HomeScreen() {
     Scaffold(
-        content = { HomeScreenContent() },
+        content = { paddingValues -> HomeScreenContent(paddingValues) },
         bottomBar = { BloomHomeBottomAppBar() }
     )
 }
 
 @Composable
-fun HomeScreenContent() {
+fun HomeScreenContent(paddingValues: PaddingValues) {
 
     Surface(
         modifier = Modifier.fillMaxSize(),
@@ -36,7 +36,8 @@ fun HomeScreenContent() {
         Column(
             modifier = Modifier
                 .fillMaxSize()
-                .padding(16.dp)
+                .padding(paddingValues)
+                .padding(horizontal = 16.dp)
         ) {
 
             Spacer(modifier = Modifier.padding(40.dp))
@@ -127,7 +128,9 @@ fun HomeGardenSection() {
 
     LazyColumn(
         verticalArrangement = Arrangement.spacedBy(8.dp),
-        modifier = Modifier.fillMaxSize()
+        modifier = Modifier
+            .fillMaxSize()
+            .padding(2.dp)
     ) {
         items(homeGardenPlant) {
             HomeGardenPlantCard(plant = it)
